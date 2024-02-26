@@ -1,0 +1,35 @@
+package com.dao;
+
+import com.entity.ZhuanjiapingjiaEntity;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import java.util.List;
+import java.util.Map;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.plugins.pagination.Pagination;
+
+import org.apache.ibatis.annotations.Param;
+import com.entity.vo.ZhuanjiapingjiaVO;
+import com.entity.view.ZhuanjiapingjiaView;
+
+
+/**
+ * 专家评价
+ * 
+ * @author 
+ * @email 
+ * @date 2022-03-28 19:33:54
+ */
+public interface ZhuanjiapingjiaDao extends BaseMapper<ZhuanjiapingjiaEntity> {
+	
+	List<ZhuanjiapingjiaVO> selectListVO(@Param("ew") Wrapper<ZhuanjiapingjiaEntity> wrapper);
+	
+	ZhuanjiapingjiaVO selectVO(@Param("ew") Wrapper<ZhuanjiapingjiaEntity> wrapper);
+	
+	List<ZhuanjiapingjiaView> selectListView(@Param("ew") Wrapper<ZhuanjiapingjiaEntity> wrapper);
+
+	List<ZhuanjiapingjiaView> selectListView(Pagination page,@Param("ew") Wrapper<ZhuanjiapingjiaEntity> wrapper);
+	
+	ZhuanjiapingjiaView selectView(@Param("ew") Wrapper<ZhuanjiapingjiaEntity> wrapper);
+	
+
+}
